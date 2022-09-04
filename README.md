@@ -1,11 +1,36 @@
-# Start your own "Can of Books" App
+# Books
 
-This repository has starter code to begin work on creating your own online bookshelf.
+**Author**: Mohammad alhanoti
+**Version**: 1.0.0 
 
-## What can books do?
+## Overview
+an app used to display my favorate books
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
+## Getting Started
+creat the server then store the info in db then render it in the front end 
 
-## Use this template
+## Architecture
+react app
+express
+mongo db
 
-Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+## Change Log
+4/9/2022 the app initiated 
+
+## Estimates
+
+
+## Credit and Collaborations
+
+bootstrap
+https://mongoosejs.com/docs/
+
+Name of feature: mongo db
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 3:30pm
+
+Finish time: 9:30pm
+
+Actual time needed to complete: 6hours
