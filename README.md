@@ -15,16 +15,7 @@ express
 mongo db
 
 ## Change Log
-4/9/2022 the app initiated 
-
-## Estimates
-
-
-## Credit and Collaborations
-
-bootstrap
-https://mongoosejs.com/docs/
-
+4/9/2022 the app initiated.
 Name of feature: mongo db
 
 Estimate of time needed to complete: 4 hours
@@ -34,3 +25,17 @@ Start time: 3:30pm
 Finish time: 9:30pm
 
 Actual time needed to complete: 6hours
+
+
+5/9/2022 the app now can add book by the user and delate it as well.
+
+Name of feature: mongo db
+
+Estimate of time needed to complete: 8 hours
+
+Start time: 3:30pm
+
+Finish time: 8pm
+
+Actual time needed to complete: 4.5 hours
+

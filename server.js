@@ -10,13 +10,18 @@ const bookModel =require('./schema');
 const server = express();
 server.use(cors());
 
+// access req.body
+server.use(express.json());
+
+
 const PORT = process.env.PORT || 3001;
 
 
 
+//mongoose.connect('mongodb://localhost:27017/Book', {useNewUrlParser: true, useUnifiedTopology: true}); // 1 - connect mongoose with DB
 
 
-mongoose.connect('mongodb://localhost:27017/Book', {useNewUrlParser: true, useUnifiedTopology: true}); // 1 - connect mongoose with DB
+mongoose.connect('mongodb://MohdHanoti1:1234@ac-teztbfx-shard-00-00.isrq3td.mongodb.net:27017,ac-teztbfx-shard-00-01.isrq3td.mongodb.net:27017,ac-teztbfx-shard-00-02.isrq3td.mongodb.net:27017/?ssl=true&replicaSet=atlas-m7d07c-shard-0&authSource=admin&retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true}); // 1 - connect mongoose with DB
 
 
 
@@ -45,36 +50,65 @@ async function seedData(){
 
   // seedData();
 
+
+//ROUTES
 // http://localhost:3001/
 server.get('/',(req,res)=>{
   res.send('hello from the home route');
 })
-
-
 // http://localhost:3001/test
 server.get('/test', (req, res) => {
-
   res.send('test request received');
-
 })
-
-
-
 // http://localhost:3001/Books
 server.get('/Books',getBookHandler);
 
+// http://localhost:3001/addBook
+server.post('/addBook',addBookHandler);
+
+// http://localhost:3001/eleteBook
+server.delete('/deleteBook/:id',deleteBookHandler);
+
+
+
 function getBookHandler(req,res){
+
+  bookModelDev(req,res);
+}
+
+async function addBookHandler(req,res){
+  console.log(req.body);
+  const {Title,Description,Status}=req.body;
+  
+  await bookModel.create({
+    title : Title,
+    description : Description,
+    status : Status
+});
+
+  bookModelDev(req,res);
+}
+
+function deleteBookHandler(req,res){
+  const bookId = req.params.id;
+  bookModel.deleteOne({_id:bookId},()=>{
+    bookModelDev(req,res);
+  })
+}
+
+function bookModelDev(req,res) {
   bookModel.find({},(err,result)=>{
-    if(err)
-    {
-      console.log(err);
-    }
-    else
-    {
-      console.log(result);
-      res.send(result);
-    }
-  } ) 
+  if(err)
+  {
+    console.log(err);
+  }
+  else
+  {
+    console.log(result);
+    res.send(result);
+  }
+} ) 
+
 }
 
 // http://localhost:3001/*
