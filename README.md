@@ -39,3 +39,15 @@ Finish time: 8pm
 
 Actual time needed to complete: 4.5 hours
 
+6/9/2022 the app now can update book by the user and delate it as well.
+
+Name of feature: mongo db
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 2pm
+
+Finish time: 6pm
+
+Actual time needed to complete: 4 hours
+
